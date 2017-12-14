@@ -45,5 +45,7 @@ def todo():
 
     return template('index', cur = data)
 
-
-run(host='localhost', port=8080, debug=True)
+if os.environ.get('Gaman'):
+    run(host="0.0.0.0", port=os.environ.get('PORT'))
+else:
+    run(host='localhost', port=8080, debug=True)
