@@ -31,7 +31,7 @@
 	<table id="customers">
 	  <tr>
 	    <th>ID</th>
-	    <th>Heiti</th>
+	    <th>info</th>
 	    <th>Staða</th>
 	  </tr>
 
