@@ -12,26 +12,26 @@ def buid():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
                            db='1007002630_veflokaverk')
     cur = conn.cursor()
-    heiti = request.query.get("heiti")
+    info = request.query.get("info")
     val = request.query.get("val")
     nr = request.query.get("nr")
     if val == "baeta":
-        cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(heiti, 0))
+        cur.execute("Insert into todo (info, stada) values('{}','{:d}')".format(info, 0))
         #cur.execute("INSERT INTO todo (heiti,stada) Values(heiti,0)")
         conn.commit()
         cur.close()
         conn.close()
     elif val == "breyta":
-        cur.execute("Update todo set stada='{}' where heiti='{}'".format(nr, heiti))
+        cur.execute("Update todo set stada='{}' where info='{}'".format(nr, info))
         conn.commit()
         cur.close()
         conn.close()
     else:
-        cur.execute("Delete from todo where heiti = '{}'".format(heiti))
+        cur.execute("Delete from todo where info = '{}'".format(info))
         conn.commit()
         cur.close()
         conn.close()
-    return template('buid', heiti = heiti)
+    return template('buid', info = info)
 
 
 @route('/')
