@@ -26,7 +26,7 @@ def buid():
         conn.commit()
         cur.close()
         conn.close()
-    else:
+    elif val == "eyda":
         cur.execute("Delete from todo where info = '{}'".format(info))
         conn.commit()
         cur.close()
