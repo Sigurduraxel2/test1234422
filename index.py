@@ -9,8 +9,8 @@ def baeta():
 
 @route('/buid', method='get')
 def buid():
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2304003260', passwd='mypassword',
-                           db='2304003260_todo')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
+                           db='1007002630_veflokaverk')
     cur = conn.cursor()
     heiti = request.query.get("heiti")
     val = request.query.get("val")
@@ -36,8 +36,8 @@ def buid():
 
 @route('/')
 def todo():
-    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='2304003260', passwd='mypassword',
-                           db='2304003260_todo')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
+                           db='1007002630_veflokaverk')
     cur = conn.cursor()
     cur.execute("SELECT * FROM todo")
     data = cur.fetchall()
