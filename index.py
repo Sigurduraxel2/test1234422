@@ -13,26 +13,32 @@ def buid():
                            db='1007002630_veflokaverk')
     cur = conn.cursor()
     heiti = request.query.get("heiti")
-    val = request.query.get("val")
     nr = request.query.get("nr")
-    if val == "baeta":
-        cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(heiti, 0))
-        #cur.execute("INSERT INTO todo (heiti,stada) Values(heiti,0)")
-        conn.commit()
-        cur.close()
-        conn.close()
-    elif val == "breyta":
-        cur.execute("Update todo set stada='{}' where heiti='{}'".format(nr, heiti))
-        conn.commit()
-        cur.close()
-        conn.close()
-    else:
-        cur.execute("Delete from todo where heiti = '{}'".format(heiti))
-        conn.commit()
-        cur.close()
-        conn.close()
+    cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(heiti, 0))
+    conn.commit()
+    cur.close()
+    conn.close()
     return template('buid', heiti = heiti)
 
+@route('/eyda')
+def eyda():
+    return template('eyda')
+
+
+@route('/buid2', method='get')
+def buid2():
+    nr2 = request.query.get('enumer')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
+                           db='1007002630_veflokaverk')
+    cur = conn.cursor()
+    cur.execute("Delete from todo where id = {}".format(nr2))
+    heiti = request.query.get("heiti")
+    conn.commit()
+    cur.close()
+    conn.close()
+    return template('buid', heiti = heiti)
+    
+    
 
 @route('/')
 def todo():
