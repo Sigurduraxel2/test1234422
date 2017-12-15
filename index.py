@@ -37,9 +37,27 @@ def buid2():
     cur.close()
     conn.close()
     return template('buid', heiti = heiti)
-    
-    
 
+
+@route('/brayta')
+def breyta():
+    return template('breyta.tpl')
+@route('/buid3', method='get')
+def buid3():
+    nr3 = request.query.get('numer3')
+    nytexti = request.query.get('nytexti')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
+                           db='1007002630_veflokaverk')
+    cur = conn.cursor()
+    cur.execute("Update todo set stada='{}' where heiti='{}'".format(nr3, nytexti))
+    heiti = request.query.get("heiti")
+    conn.commit()
+    cur.close()
+    conn.close()
+    return template('buid', heiti = heiti)
+
+    
+    
 @route('/')
 def todo():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
