@@ -15,7 +15,12 @@ def buid():
     info = request.query.get("info")
     val = request.query.get("val")
     id = request.query.get("id")
-    if val == "baeta":
+    if val == "eyda":
+        cur.execute("Delete from todo where info = '{}'".format(info))
+        conn.commit()
+        cur.close()
+        conn.close()
+    elif val == "baeta":
         cur.execute("Insert into todo (info, stada) values('{}','{:d}')".format(info, 0))
         #cur.execute("INSERT INTO todo (heiti,stada) Values(heiti,0)")
         conn.commit()
@@ -23,11 +28,6 @@ def buid():
         conn.close()
     elif val == "breyta":
         cur.execute("Update todo set stada='{}' where info='{}'".format(id, info))
-        conn.commit()
-        cur.close()
-        conn.close()
-    elif val == "eyda":
-        cur.execute("Delete from todo where info = '{}'".format(info))
         conn.commit()
         cur.close()
         conn.close()
