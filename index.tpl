@@ -43,7 +43,9 @@
 		  </tr>
 	% end
 		<td></td>
-		<td class="breyta"><a href="/baeta"><h2>Breyta</h2></a></td>
+		<td class="breyta"><a href="/baeta"><h2>Bæta todo</h2></a></td>
+		<td class="breyta"><a href="/eyda"><h2>eyda todo</h2></a></td>
+		<td class="breyta"><a href="/breyta"><h2>breyta todo</h2></a></td>
 		<td></td>
 
 	</table>
