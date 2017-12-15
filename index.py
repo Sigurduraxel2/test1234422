@@ -39,7 +39,7 @@ def buid2():
     return template('buid', heiti = heiti)
 
 
-@route('/brayta')
+@route('/breyta')
 def breyta():
     return template('breyta.tpl')
 @route('/buid3', method='get')
