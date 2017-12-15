@@ -12,8 +12,8 @@
                 <option value="baeta">Bæta</option>
                 <option value="breyta">Breyta</option>
             </select><br>
-            info: <br><input type="text" name="info" placeholder="Skráðu info hér" required><br>
-            Breyta: <br><input type="text" name="id" placeholder="skrifaðu 0 eða 1(bara ef valið var Breyta fyrir ofan)"><br>
+            Heiti: <br><input type="text" name="heiti" placeholder="Skráðu heitið hér" required><br>
+            Breyta: <br><input type="text" name="nr" placeholder="skrifaðu 0 eða 1(bara ef valið var Breyta fyrir ofan)"><br>
             <br><input type="submit" value="Skrá">
         </form>
     </body>
