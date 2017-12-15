@@ -24,14 +24,13 @@
 		.bla2 {
 			text-align: center;
 		}
-		.buttons{
-			display: flex;
-			flex-direction: column;
+		h1{
+			text-align: center;
 		}
 	</style>
 </head>
 <body>
-	<h1>Todo listinn minn</h1>
+	<h1>Todo listi</h1>
 	<table id="customers">
 	  <tr>
 	    <th>ID</th>
@@ -46,13 +45,11 @@
 		    <td>{{row[2]}}</td>
 		  </tr>
 	% end	
-		<section class="buttons">
 			<td></td>
 			<td class="bla2"><a href="/baeta"><h2>Bæta todo</h2></a></td>
 			<td class="bla2"><a href="/eyda"><h2>eyda todo</h2></a></td>
 			<td class="bla2"><a href="/breyta"><h2>breyta todo</h2></a></td>
 			<td></td>
-		</section>
 
 	</table>
 </body>
