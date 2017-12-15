@@ -14,7 +14,7 @@ def buid():
     cur = conn.cursor()
     heiti = request.query.get("heiti")
     nr = request.query.get("nr")
-    cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(heiti, nr))
+    cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(heiti, 0))
     conn.commit()
     cur.close()
     conn.close()
