@@ -48,7 +48,7 @@ def buid3():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
                            db='1007002630_veflokaverk')
     cur = conn.cursor()
-    cur.execute("Update todo set stada='{}' where heiti='{}'".format(nr3, nytexti))
+    cur.execute("Update todo set heiti='{}' where id='{}'".format(nytexti, nr3))
     heiti = request.query.get("heiti")
     conn.commit()
     cur.close()
