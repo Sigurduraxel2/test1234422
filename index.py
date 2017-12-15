@@ -12,8 +12,8 @@ def buid():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
                            db='1007002630_veflokaverk')
     cur = conn.cursor()
-    texti = request.query.get("texti")
-    cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(texti, 0))
+    heiti = request.query.get("heiti")
+    cur.execute("Insert into todo (heiti, stada) values('{}','{:d}')".format(heiti, 0))
     conn.commit()
     cur.close()
     conn.close()
