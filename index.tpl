@@ -26,6 +26,7 @@
 		}
 		.buttons{
 			display: flex;
+			flex-direction: column;
 		}
 	</style>
 </head>
