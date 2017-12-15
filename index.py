@@ -35,10 +35,10 @@ def buid():
 
 @route("eyda")
 def eyda():
-    info = request.query.get('info')
+    id = request.query.get('id')
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
                            db='1007002630_veflokaverk')
-    cur.execute("SELECT todo FROM todo  where id = {}".format(info))
+    cur.execute("SELECT todo FROM todo  where id = {}".format(id))
     conn.commit()
     cur.close()
     conn.close()
