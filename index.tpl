@@ -12,7 +12,7 @@
 		    border: 1px solid #ddd;
 		    padding: 8px;
 		}
-		#customers tr:nth-child(even){background-color: #f2f2f2;}
+		#customers tr:nth-child(even){background-color: #12a3bc;}
 		#customers tr:hover {background-color: #ddd;}
 		#customers th {
 		    padding-top: 12px;
@@ -21,8 +21,11 @@
 		    background-color: #4CAF50;
 		    color: white;
 		}
-		.breyta {
+		.bla2 {
 			text-align: center;
+		}
+		.buttons{
+			width: 100%;
 		}
 	</style>
 </head>
@@ -41,12 +44,14 @@
 		    <td>{{row[1]}}</td>
 		    <td>{{row[2]}}</td>
 		  </tr>
-	% end
-		<td></td>
-		<td class="breyta"><a href="/baeta"><h2>Bæta todo</h2></a></td>
-		<td class="breyta"><a href="/eyda"><h2>eyda todo</h2></a></td>
-		<td class="breyta"><a href="/breyta"><h2>breyta todo</h2></a></td>
-		<td></td>
+	% end	
+		<section class="buttons">
+			<td></td>
+			<td class="bla2"><a href="/baeta"><h2>Bæta todo</h2></a></td>
+			<td class="bla2"><a href="/eyda"><h2>eyda todo</h2></a></td>
+			<td class="bla2"><a href="/breyta"><h2>breyta todo</h2></a></td>
+			<td></td>
+		</section>
 
 	</table>
 </body>
