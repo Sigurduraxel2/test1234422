@@ -22,7 +22,7 @@ def buid():
 
 @route('/eyda')
 def eyda():
-    return template('eyda')
+    return template('eyda.tpl')
 
 
 @route('/buid2', method='get')
