@@ -16,16 +16,15 @@ def buid():
     val = request.query.get("val")
     id = request.query.get("id")
     if val == "eyda":
-        cur.execute("Delete from todo where info = '{}'".format(info))
-        conn.commit()
-        cur.close()
-        conn.close()
+        redirect("/eyda")
+        
     elif val == "baeta":
         cur.execute("Insert into todo (info, stada) values('{}','{:d}')".format(info, 0))
         #cur.execute("INSERT INTO todo (heiti,stada) Values(heiti,0)")
         conn.commit()
         cur.close()
         conn.close()
+        
     elif val == "breyta":
         cur.execute("Update todo set stada='{}' where info='{}'".format(id, info))
         conn.commit()
@@ -34,6 +33,18 @@ def buid():
     return template('buid', info = info)
 
 
+@route("eyda")
+def eyda():
+    info = request.query.get('info')
+    conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
+                           db='1007002630_veflokaverk')
+    cur.execute("SELECT todo FROM todo  where id = {}".format(info))
+    conn.commit()
+    cur.close()
+    conn.close()
+    redirect("/")
+    
+    
 @route('/')
 def todo():
     conn = pymysql.connect(host='tsuts.tskoli.is', port=3306, user='1007002630', passwd='axelerawesome12',
