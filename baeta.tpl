@@ -4,7 +4,7 @@
         <title>Bæta Við</title>
     </head>
     <body>
-        <h1>Bæta Við</h1>
+        <h1>Bæta Við1</h1>
         <form action="./buid" method="get" accept-charset="ISO-8859-1"><br>
             Eyða eða Bæta: <br>
             <select name="val">
