@@ -4,10 +4,9 @@
         <title>Bæta Við</title>
     </head>
     <body>
-        <h1>Bæta Við</h1>
+        <h1>Bæta Við texta í todo lista</h1>
         <form action="./buid" method="get" accept-charset="ISO-8859-1"><br>
-            Heiti: <br><input type="text" name="heiti" placeholder="Skráðu heitið hér" required><br>
-            Breyta: <br><input type="text" name="nr" placeholder="veldu 1 eða 0"><br>
+            Texti: <br><input type="text" name="texti" placeholder="Skrifaðu texta hér" required><br>
             <br><input type="submit" value="Skrá">
         </form>
     </body>
